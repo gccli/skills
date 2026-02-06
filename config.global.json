@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "nord",
+  "autoupdate": true,
+  "tui": {
+    "scroll_speed": 3,
+    "scroll_acceleration": {
+      "enabled": true
+    },
+    "diff_style": "auto"
+  },
+
+  "server": {
+    "port": 8180,
+    "hostname": "0.0.0.0"
+  }
+}
