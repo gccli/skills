@@ -3,6 +3,7 @@
 # Get current date and time for backup filename
 dt=$(date +'%Y%m%d%H%m%S')
 
+
 # Define paths
 OPENDOC_CONFIG_DIR="$HOME/.config/opencode"
 OPENDOC_CONFIG_FILE="$OPENDOC_CONFIG_DIR/config.json"
@@ -15,6 +16,15 @@ if [ ! -d "$OPENDOC_CONFIG_DIR" ]; then
     echo "Creating directory: $OPENDOC_CONFIG_DIR"
     mkdir -p "$OPENDOC_CONFIG_DIR"
 fi
+
+
+OPENDOC_GLOBAL_RULE=~/.config/opencode/AGENTS.md
+GLOBAL_RULE=AGENTS.global.md
+
+
+/bin/cp $OPENDOC_GLOBAL_RULE ${OPENDOC_GLOBAL_RULE}.${dt}
+/bin/cp $GLOBAL_RULE  $OPENDOC_GLOBAL_RULE
+
 
 # 2. Compare with global config and prompt user
 if [ -f "$OPENDOC_CONFIG_FILE" ]; then
@@ -53,5 +63,9 @@ fi
 # 4. Copy global config to user config
 echo "Copying global config to: $OPENDOC_CONFIG_FILE"
 /bin/cp "$GLOBAL_CONFIG_FILE" "$OPENDOC_CONFIG_FILE"
+
+
+
+
 
 echo "OpenCode configuration updated successfully."
