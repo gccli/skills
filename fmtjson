@@ -1,0 +1,10 @@
+#! /bin/bash
+
+
+if [ -f "$1" ]; then
+   cp $1 /tmp/a.json
+   bn=$(basename $1)
+   if jq <$1 >/tmp/$bn; then
+     /bin/cp /tmp/$bn $1
+   fi
+fi

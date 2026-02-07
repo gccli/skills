@@ -9,9 +9,17 @@
     },
     "diff_style": "auto"
   },
-
   "server": {
     "port": 8180,
     "hostname": "0.0.0.0"
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-b4310d0c-6283-4f97-93f1-bc004d6ee8b3"
+      }
+    }
   }
 }

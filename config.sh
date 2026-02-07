@@ -30,7 +30,7 @@ if [ -f "$OPENDOC_CONFIG_FILE" ]; then
         echo "Differences between your current config and the global config:"
         # `|| true` prevents the script from exiting if diff finds differences
         diff -u "$OPENDOC_CONFIG_FILE" "$GLOBAL_CONFIG_FILE" || true
-        
+
         read -p "Overwrite your existing config with the global config? (y/N) " -n 1 -r
         echo # Move to a new line after the prompt
         if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -39,17 +39,15 @@ if [ -f "$OPENDOC_CONFIG_FILE" ]; then
         fi
     fi
 fi
-        echo "Differences between your current config and the global config:"
-        # `|| true` prevents the script from exiting if diff finds differences
-        diff -u "$OPENDOC_CONFIG_FILE" "$GLOBAL_CONFIG_FILE" || true
-        
-        read -p "Overwrite your existing config with the global config? (y/N) " -n 1 -r
-        echo # Move to a new line after the prompt
-        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-            echo "Configuration not updated. Keeping existing config."
-            exit 0
-        fi
-    fi
+echo "Differences between your current config and the global config:"
+
+diff -u "$OPENDOC_CONFIG_FILE" "$GLOBAL_CONFIG_FILE" || true
+
+read -p "Overwrite your existing config with the global config? (y/N) " -n 1 -r
+echo # Move to a new line after the prompt
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "Configuration not updated. Keeping existing config."
+    exit 0
 fi
 
 # 4. Copy global config to user config
