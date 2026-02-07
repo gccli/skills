@@ -19,3 +19,8 @@
 - **Web Framework:** `github.com/gofiber/fiber/v2`
 * **Validation:** `go-playground/validator`
 * **Auth:** `golang-jwt/jwt`
+
+
+### 3. Code Style
+
+- **String Compare:** using `strings.EqualFlod`

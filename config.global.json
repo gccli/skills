@@ -9,10 +9,6 @@
     },
     "diff_style": "auto"
   },
-  "server": {
-    "port": 8180,
-    "hostname": "0.0.0.0"
-  },
   "mcp": {
     "context7": {
       "type": "remote",

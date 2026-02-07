@@ -8,6 +8,8 @@ PWD=$(dirname $(readlink -f $0))
 OPENDOC_CONFIG_DIR="$HOME/.config/opencode"
 OPENDOC_CONFIG_FILE="$OPENDOC_CONFIG_DIR/config.json"
 GLOBAL_CONFIG_FILE="config.global.json"
+OPENDOC_GLOBAL_RULE=~/.config/opencode/AGENTS.md
+GLOBAL_RULE=AGENTS.global.md
 
 echo "Starting OpenCode configuration script..."
 
@@ -18,18 +20,14 @@ if [ ! -d "$OPENDOC_CONFIG_DIR" ]; then
 fi
 
 
-# Set global rule and skills
-
-OPENDOC_GLOBAL_RULE=~/.config/opencode/AGENTS.md
-GLOBAL_RULE=AGENTS.global.md
-
-/bin/cp $OPENDOC_GLOBAL_RULE ${OPENDOC_GLOBAL_RULE}.${dt}
+/bin/cp $OPENDOC_GLOBAL_RULE ${OPENDOC_GLOBAL_RULE}.${dt}.bak
 /bin/cp $GLOBAL_RULE  $OPENDOC_GLOBAL_RULE
 
-ln -sf ${PWD}/.agents/skills ${OPENDOC_CONFIG_DIR}/skills
+if [ -h ${OPENDOC_CONFIG_DIR}/skills ]; then
+    rm -f ${OPENDOC_CONFIG_DIR}/skills
+fi
+ln -s ${PWD}/.agents/skills ${OPENDOC_CONFIG_DIR}/skills
 
-
-# 2. Compare with global config and prompt user
 if [ -f "$OPENDOC_CONFIG_FILE" ]; then
     # Check if there are any differences
     if diff -q "$OPENDOC_CONFIG_FILE" "$GLOBAL_CONFIG_FILE" >/dev/null; then
@@ -38,7 +36,7 @@ if [ -f "$OPENDOC_CONFIG_FILE" ]; then
     else
         # Backup existing config if it exists and there are differences
         echo "Backing up existing config to: ${OPENDOC_CONFIG_FILE}.${dt}"
-        /bin/cp "$OPENDOC_CONFIG_FILE" "${OPENDOC_CONFIG_FILE}.${dt}"
+        /bin/cp $OPENDOC_CONFIG_FILE ${OPENDOC_CONFIG_FILE}.${dt}.bak
 
         echo "Differences between your current config and the global config:"
         # `|| true` prevents the script from exiting if diff finds differences
@@ -52,20 +50,7 @@ if [ -f "$OPENDOC_CONFIG_FILE" ]; then
         fi
     fi
 fi
-echo "Differences between your current config and the global config:"
 
-diff -u "$OPENDOC_CONFIG_FILE" "$GLOBAL_CONFIG_FILE" || true
-
-read -p "Overwrite your existing config with the global config? (y/N) " -n 1 -r
-echo # Move to a new line after the prompt
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    echo "Configuration not updated. Keeping existing config."
-    exit 0
-fi
-
-# 4. Copy global config to user config
 echo "Copying global config to: $OPENDOC_CONFIG_FILE"
 /bin/cp "$GLOBAL_CONFIG_FILE" "$OPENDOC_CONFIG_FILE"
-
-
 echo "OpenCode configuration updated successfully."
