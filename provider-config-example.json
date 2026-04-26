@@ -1,0 +1,16 @@
+{
+  "provider": {
+    "moonshot-ai-china": {
+      "options": {
+        "baseURL": "https://api.moonshot.cn/v1/",
+        "apiKey": "sk-xxxxxxxxxxx"
+      },
+      "models": {
+        "kimi-k2.5": {
+          "name": "kimi-k2.5",
+          "id": "kimi-k2.5"
+        }
+      }
+    }
+  }
+}
