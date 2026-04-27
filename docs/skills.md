@@ -67,17 +67,3 @@ npx skills add <owner/repo@skill> -g -y
 ```
 
 > 更多命令请参考 `find-skills` Skill 或运行 `npx skills --help`。
-
----
-
-## 添加新 Skill
-
-如需收录新的 Skill：
-
-1. 将 Skill 文件/目录放入 `skills/` 下的合适位置；
-2. 更新本 `README.md`，在表格中补充新 Skill 的说明；
-3. 如有必要，更新 `skills-lock.json` 记录来源和哈希。
-
----
-
-> **提示：** 各 Skill 的详细触发条件、工作流和约束请直接查看对应目录下的 `SKILL.md` 文件。
