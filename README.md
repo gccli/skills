@@ -1,82 +1,110 @@
-# Skills Baisc
+# Skills 技能管理仓库
 
-The open agent skills tool - [npx skills](https://github.com/vercel-labs/skills)
+> 基于 [npx skills](https://github.com/vercel-labs/skills) 的 Agent Skills 管理与 OpenCode 配置仓库。
 
-| Command                    | Description                                   |
-|----------------------------|-----------------------------------------------|
-| npx skills list            | List installed skills (alias: ls)             |
-| npx skills find [query]    | Search for skills interactively or by keyword |
-| npx skills remove [skills] | Remove installed skills from agents           |
-| npx skills update [skills] | Update installed skills to latest versions    |
-| npx skills init [name]     | Create a new SKILL.md template                |
+## Skills CLI 命令
 
-`npx skills ls | npx skills ls -g | npx skills ls -a opencode`
-
-
-# OpenCode 技能仓库
-
-本仓库用于整理 OpenCode 使用文档和收集 Agent Skills。
-
-## 仓库目的
-
-- **整理 OpenCode 使用文档**：提供 OpenCode 相关配置、规则和最佳实践
-- **收集 Agent Skills**：存储和管理用于扩展 AI 助手能力的专业技能
+| Command | Description |
+|---|---|
+| `npx skills ls` | 列出项目级技能 |
+| `npx skills ls -g` | 列出全局技能 |
+| `npx skills ls -a opencode` | 列出 OpenCode 关联技能 |
+| `npx skills find [query]` | 搜索技能（交互式或关键字） |
+| `npx skills remove [skills]` | 移除已安装技能 |
+| `npx skills update [skills]` | 更新技能到最新版本 |
+| `npx skills init [name]` | 创建新的 SKILL.md 模板 |
 
 ## 目录结构
 
 ```
 .
-├── .agents/                    # Agent Skills 存储目录
-│   └── skills/                # 技能实现
-│       ├── golang-pro/        # Golang 专业开发技能
-│       ├── doc-coauthoring/   # 文档协同创作技能
-│       ├── find-skills/       # 技能发现与安装技能
-│       └── systematic-debugging/ # 系统化调试技能
-├── AGENTS.global.md           # 全局 Agent 配置说明
-├── opencode.md               # OpenCode 基本使用指南
-├── opencode-rules.md         # OpenCode 行为规则
-├── opencode-providers.md     # OpenCode 提供者配置
-└── config.global.json        # 全局配置文件
+├── .agents/skills/               # 项目级 Agent Skills
+│   ├── doc-coauthoring/          # 文档协同创作
+│   ├── gitcommit/                # Git 提交规范化
+│   ├── golang-development.md     # Golang 开发规范参考
+│   ├── golang-naming/            # Go 命名约定
+│   ├── golang-popular-libraries/ # Go 流行库推荐
+│   ├── golang-pro/               # Go 专业开发（并发/微服务）
+│   ├── playwright-mcp/           # 浏览器自动化（Playwright MCP）
+│   ├── rust-best-practices/      # Rust 最佳实践
+│   └── systematic-debugging/     # 系统化调试方法论
+├── docs/                         # OpenCode 使用文档
+│   ├── opencode-agents.md        # Agent 配置说明
+│   ├── opencode-config.md        # OpenCode 配置指南
+│   ├── opencode-providers.md     # 模型提供者配置
+│   ├── opencode-rules.md         # 行为规则说明
+│   └── skills.md                 # Skills 功能文档
+├── opencode/commands/            # OpenCode 自定义命令
+│   └── gitcommit                 # Git 提交命令
+├── openclaw/                     # OpenClaw Agent 配置
+│   └── .agents/skills/           # OpenClaw 专属技能
+├── AGENTS.global.md              # 全局 Agent 角色与规则定义
+├── config.global.json            # OpenCode 全局配置模板
+├── config.sh                     # 一键部署配置脚本
+├── fmtjson                       # JSON 格式化工具
+├── skills-lock.json              # 项目技能版本锁定
+└── README.md                     # 本文件
 ```
 
-## 包含的 Agent Skills
+## 已安装技能
 
-### 已安装技能
+### 项目级技能（`.agents/skills/`）
 
-| 技能名称 | 描述 | 触发条件 |
-|---------|------|----------|
-| **golang-pro** | Golang 专业开发技能，适用于并发编程、微服务架构 | 涉及 Go 代码编写、重构或架构设计时 |
-| **doc-coauthoring** | 文档协同创作技能，用于结构化文档编写流程 | 用户需要编写文档、提案、技术规范时 |
-| **find-skills** | 技能发现与安装技能 | 用户询问如何查找或安装技能时 |
-| **systematic-debugging** | 系统化调试方法论 | 遇到 bug、测试失败或异常行为时 |
+| 技能 | 来源 | 描述 |
+|---|---|---|
+| **doc-coauthoring** | 内置 | 文档协同创作工作流 |
+| **gitcommit** | 内置 | 规范 Git Commit Message |
+| **golang-naming** | samber/cc-skills-golang | Go 命名约定指南 |
+| **golang-popular-libraries** | samber/cc-skills-golang | Go 生产级库推荐 |
+| **golang-pro** | jeffallan/claude-skills | Go 进阶开发（并发/gRPC/性能优化） |
+| **playwright-mcp** | 内置 | 浏览器自动化（Playwright MCP） |
+| **rust-best-practices** | apollographql/skills | Rust 最佳实践（来自 Apollo） |
+| **systematic-debugging** | obra/superpowers | 系统化调试方法论 |
+
+### 全局技能（`~/.agents/skills/` & `~/.config/opencode/skills/`）
+
+部分技能同时安装为全局技能，供所有项目使用：
+
+- **find-skills** — 技能发现与安装
+- doc-coauthoring, gitcommit, golang-naming, golang-popular-libraries, golang-pro, playwright-mcp, rust-best-practices, systematic-debugging
 
 ## 快速开始
 
-### 1. 查看 OpenCode 文档
+### 1. 一键配置
 
 ```bash
-# 查看基本使用指南
-cat opencode.md
-
-# 查看行为规则
-cat opencode-rules.md
+./config.sh
 ```
 
-### 2. 使用 Agent Skills
+将自动完成：
+- 创建符号链接 `~/.config/opencode/skills -> .agents/skills`
+- 复制 `AGENTS.global.md` 到 `~/.config/opencode/AGENTS.md`
+- 部署全局配置文件 `config.global.json`
 
-Skills 在 OpenCode 中会根据任务上下文自动激活，无需手动干预。
+### 2. 管理技能
 
-### 3. 技能存储位置
+```bash
+npx skills ls              # 查看项目技能
+npx skills ls -g           # 查看全局技能
+npx skills find golang     # 搜索可用技能
+npx skills update golang-pro  # 更新指定技能
+```
 
-技能存储在 `.agents/skills/` 目录中，每个技能包含完整的文档和工作流程。
+### 3. 查看 OpenCode 文档
 
-## 相关文档
+```bash
+ls docs/           # OpenCode 使用文档（agents / config / providers / rules / skills）
+```
+
+## 相关链接
 
 - [OpenCode 官方文档](https://opencode.ai/docs)
 - [Skills 生态系统](https://skills.sh/)
-- [AGENTS.global.md](./AGENTS.global.md) - 详细的 Agent 配置说明
+- [npx skills 工具](https://github.com/vercel-labs/skills)
+- [AGENTS.global.md](./AGENTS.global.md) — Agent 角色详细定义
 
 ## 更新日志
 
+- **2025-04-27**：新增 golang-naming、golang-popular-libraries、playwright-mcp、rust-best-practices、gitcommit 技能；文档移至 docs/；新增 openclaw/、config.sh、skills-lock.json
 - **2025-02-07**：简化 README，突出仓库核心目的
-- **2025-02-05**：初始版本，包含多个技能和 OpenCode 文档
+- **2025-02-05**：初始版本，包含基础技能和 OpenCode 文档

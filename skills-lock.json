@@ -1,6 +1,26 @@
 {
   "version": 1,
   "skills": {
+    "doc-coauthoring": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "b964e4c3ffe13f66f76dd7919073e60c7aec622cd8a8363bb36323188100cf8e"
+    },
+    "golang-cli": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "computedHash": "d8b59c793d6ebcefa7a494e08a9b38f521bd3c8897cfd8dafa78ee474c117a82"
+    },
+    "golang-code-style": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "computedHash": "b6c51a80c7f905c4c873861d0a069e75b7193e66a0057b17db04976985c2229d"
+    },
+    "golang-design-patterns": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "computedHash": "40e05dfa2916cd801f894151d587a93a6969117bf44d8a767e48b2952380adf7"
+    },
     "golang-naming": {
       "source": "samber/cc-skills-golang",
       "sourceType": "github",
@@ -16,6 +36,11 @@
       "sourceType": "github",
       "computedHash": "c90a0798a12ea2d9191508439ec3191dd96713310615260ebe82ec5a09a4a434"
     },
+    "golang-testing": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "computedHash": "6a4472ae06d42ad876c1776c5d89dc93a0f2856fd0c0b14c03dd17c78cbbb89f"
+    },
     "rust-best-practices": {
       "source": "apollographql/skills",
       "sourceType": "github",
@@ -25,6 +50,11 @@
       "source": "obra/superpowers",
       "sourceType": "github",
       "computedHash": "72e9ab72627e4fd8ed26a582e82309a98ecdc4f6e1c99418430ac05682c9e91d"
+    },
+    "technical-article-writer": {
+      "source": "samber/cc-skills",
+      "sourceType": "github",
+      "computedHash": "bee887929e05f11332298de480952207d8bf6fab84e7cac9b9a9d2648aab50c5"
     }
   }
 }
