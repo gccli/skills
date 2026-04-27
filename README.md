@@ -10,7 +10,6 @@ The open agent skills tool - [npx skills](https://github.com/vercel-labs/skills)
 | npx skills update [skills] | Update installed skills to latest versions    |
 | npx skills init [name]     | Create a new SKILL.md template                |
 
-
 `npx skills ls | npx skills ls -g | npx skills ls -a opencode`
 
 

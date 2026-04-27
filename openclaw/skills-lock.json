@@ -5,6 +5,11 @@
       "source": "charon-fan/agent-playbook",
       "sourceType": "github",
       "computedHash": "5b95ba0530d21f79cf01f7d593463812e7702b1358dd89d259b8073cf6012349"
+    },
+    "summarize": {
+      "source": "steipete/clawdis",
+      "sourceType": "github",
+      "computedHash": "4b090b1eaf9a1d62c50971c6bcd5b4357bca209dcdfe41b2180fdc746352625f"
     }
   }
 }

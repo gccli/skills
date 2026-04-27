@@ -11,7 +11,7 @@ GLOBAL_CONFIG_FILE="config.global.json"
 OPENDOC_GLOBAL_RULE=~/.config/opencode/AGENTS.md
 GLOBAL_RULE=AGENTS.global.md
 
-echo "Starting OpenCode configuration script..."
+
 
 # 1. Create ~/.config/opencode directory if it doesn't exist
 if [ ! -d "$OPENDOC_CONFIG_DIR" ]; then
@@ -19,15 +19,20 @@ if [ ! -d "$OPENDOC_CONFIG_DIR" ]; then
     mkdir -p "$OPENDOC_CONFIG_DIR"
 fi
 
-
-/bin/cp $OPENDOC_GLOBAL_RULE ${OPENDOC_GLOBAL_RULE}.${dt}.bak
-/bin/cp $GLOBAL_RULE  $OPENDOC_GLOBAL_RULE
-
 if [ -h ${OPENDOC_CONFIG_DIR}/skills ]; then
     rm -f ${OPENDOC_CONFIG_DIR}/skills
 fi
 ln -s ${PWD}/.agents/skills ${OPENDOC_CONFIG_DIR}/skills
 
+if [ -h ${OPENDOC_CONFIG_DIR}/commands ]; then
+    rm -f ${OPENDOC_CONFIG_DIR}/commands
+fi
+ln -s ${PWD}/opnecode/commands ${OPENDOC_CONFIG_DIR}/commands
+
+
+echo "Starting OpenCode configuration script..."
+/bin/cp $OPENDOC_GLOBAL_RULE ${OPENDOC_GLOBAL_RULE}.${dt}.bak
+/bin/cp $GLOBAL_RULE  $OPENDOC_GLOBAL_RULE
 if [ -f "$OPENDOC_CONFIG_FILE" ]; then
     # Check if there are any differences
     if diff -q "$OPENDOC_CONFIG_FILE" "$GLOBAL_CONFIG_FILE" >/dev/null; then
