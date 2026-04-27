@@ -18,22 +18,13 @@
 
 ```
 .
-├── .agents/skills/               # 项目级 Agent Skills
-│   ├── doc-coauthoring/          # 文档协同创作
-│   ├── gitcommit/                # Git 提交规范化
-│   ├── golang-development.md     # Golang 开发规范参考
-│   ├── golang-naming/            # Go 命名约定
-│   ├── golang-popular-libraries/ # Go 流行库推荐
-│   ├── golang-pro/               # Go 专业开发（并发/微服务）
-│   ├── playwright-mcp/           # 浏览器自动化（Playwright MCP）
-│   ├── rust-best-practices/      # Rust 最佳实践
-│   └── systematic-debugging/     # 系统化调试方法论
+├── .agents/skills/               # 通用 Agent Skills（详见 docs/skills.md）
 ├── docs/                         # OpenCode 使用文档
 │   ├── opencode-agents.md        # Agent 配置说明
 │   ├── opencode-config.md        # OpenCode 配置指南
 │   ├── opencode-providers.md     # 模型提供者配置
 │   ├── opencode-rules.md         # 行为规则说明
-│   └── skills.md                 # Skills 功能文档
+│   └── skills.md                 # Skills 完整列表
 ├── opencode/commands/            # OpenCode 自定义命令
 │   └── gitcommit                 # Git 提交命令
 ├── openclaw/                     # OpenClaw Agent 配置
@@ -46,27 +37,7 @@
 └── README.md                     # 本文件
 ```
 
-## 已安装技能
-
-### 项目级技能（`.agents/skills/`）
-
-| 技能 | 来源 | 描述 |
-|---|---|---|
-| **doc-coauthoring** | 内置 | 文档协同创作工作流 |
-| **gitcommit** | 内置 | 规范 Git Commit Message |
-| **golang-naming** | samber/cc-skills-golang | Go 命名约定指南 |
-| **golang-popular-libraries** | samber/cc-skills-golang | Go 生产级库推荐 |
-| **golang-pro** | jeffallan/claude-skills | Go 进阶开发（并发/gRPC/性能优化） |
-| **playwright-mcp** | 内置 | 浏览器自动化（Playwright MCP） |
-| **rust-best-practices** | apollographql/skills | Rust 最佳实践（来自 Apollo） |
-| **systematic-debugging** | obra/superpowers | 系统化调试方法论 |
-
-### 全局技能（`~/.agents/skills/` & `~/.config/opencode/skills/`）
-
-部分技能同时安装为全局技能，供所有项目使用：
-
-- **find-skills** — 技能发现与安装
-- doc-coauthoring, gitcommit, golang-naming, golang-popular-libraries, golang-pro, playwright-mcp, rust-best-practices, systematic-debugging
+> 已安装 Skills 的完整列表参见 [docs/skills.md](./docs/skills.md)。
 
 ## 快速开始
 

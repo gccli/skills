@@ -27,7 +27,7 @@ ln -s ${PWD}/.agents/skills ${OPENDOC_CONFIG_DIR}/skills
 if [ -h ${OPENDOC_CONFIG_DIR}/commands ]; then
     rm -f ${OPENDOC_CONFIG_DIR}/commands
 fi
-ln -s ${PWD}/opnecode/commands ${OPENDOC_CONFIG_DIR}/commands
+ln -s ${PWD}/opencode/commands ${OPENDOC_CONFIG_DIR}/commands
 
 
 echo "Starting OpenCode configuration script..."
