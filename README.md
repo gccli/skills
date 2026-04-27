@@ -1,3 +1,19 @@
+# Skills Baisc
+
+The open agent skills tool - [npx skills](https://github.com/vercel-labs/skills)
+
+| Command                    | Description                                   |
+|----------------------------|-----------------------------------------------|
+| npx skills list            | List installed skills (alias: ls)             |
+| npx skills find [query]    | Search for skills interactively or by keyword |
+| npx skills remove [skills] | Remove installed skills from agents           |
+| npx skills update [skills] | Update installed skills to latest versions    |
+| npx skills init [name]     | Create a new SKILL.md template                |
+
+
+`npx skills ls | npx skills ls -g | npx skills ls -a opencode`
+
+
 # OpenCode 技能仓库
 
 本仓库用于整理 OpenCode 使用文档和收集 Agent Skills。

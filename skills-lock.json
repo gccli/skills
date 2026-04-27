@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "golang-naming": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "computedHash": "37b76224c8957493590814cc661219327e5be5aa629dfa730da75a98b5a9fa60"
+    },
+    "golang-popular-libraries": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "computedHash": "597f416a045a5b7f5aaa51084c6318b63602844e5bced62f1743bab83e1a97a0"
+    },
+    "systematic-debugging": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "computedHash": "72e9ab72627e4fd8ed26a582e82309a98ecdc4f6e1c99418430ac05682c9e91d"
+    }
+  }
+}
