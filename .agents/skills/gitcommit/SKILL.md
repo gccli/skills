@@ -39,9 +39,9 @@ Run only if needed:
 
 ### 2. Boundary
 
-- If staged files exist, use the staged set.
-- If nothing is staged and the changed files are one small logical set, stage only those files.
-- Otherwise, ask once with one proposal.
+- Evaluate **all tracked file changes** together: staged files plus unstaged modifications to tracked files. **Never include untracked files.**
+- If the tracked changes form one small logical set, stage any unstaged tracked files and commit the complete set.
+- If there are multiple unrelated change groups, or staged/unstaged changes appear intentionally separated, use the staged set and ask once with one proposal.
 
 Ask once only if:
 
