@@ -4,15 +4,15 @@
 
 ## Skills CLI 命令
 
-| Command | Description |
-|---|---|
-| `npx skills ls` | 列出项目级技能 |
-| `npx skills ls -g` | 列出全局技能 |
-| `npx skills ls -a opencode` | 列出 OpenCode 关联技能 |
-| `npx skills find [query]` | 搜索技能（交互式或关键字） |
-| `npx skills remove [skills]` | 移除已安装技能 |
-| `npx skills update [skills]` | 更新技能到最新版本 |
-| `npx skills init [name]` | 创建新的 SKILL.md 模板 |
+| Command                      | Description                |
+|------------------------------|----------------------------|
+| `npx skills ls`              | 列出项目级技能             |
+| `npx skills ls -g`           | 列出全局技能               |
+| `npx skills ls -a opencode`  | 列出 OpenCode 关联技能     |
+| `npx skills find [query]`    | 搜索技能（交互式或关键字） |
+| `npx skills remove [skills]` | 移除已安装技能             |
+| `npx skills update [skills]` | 更新技能到最新版本         |
+| `npx skills init [name]`     | 创建新的 SKILL.md 模板     |
 
 ## 目录结构
 
@@ -52,19 +52,11 @@
 - 复制 `AGENTS.global.md` 到 `~/.config/opencode/AGENTS.md`
 - 部署全局配置文件 `config.global.json`
 
-### 2. 管理技能
 
-```bash
-npx skills ls              # 查看项目技能
-npx skills ls -g           # 查看全局技能
-npx skills find golang     # 搜索可用技能
-npx skills update golang-pro  # 更新指定技能
+如果用了其他工具，比如cline，请手动创建到 cline 的符号链接
+
 ```
-
-### 3. 查看 OpenCode 文档
-
-```bash
-ls docs/           # OpenCode 使用文档（agents / config / providers / rules / skills）
+ln -s $PWD/.agent/skills ~/.cline/skills
 ```
 
 ## 相关链接

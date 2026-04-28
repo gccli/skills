@@ -83,7 +83,7 @@
 ## 安装 Skills
 
 ```
-npx skills add https://github.com/samber/cc-skills-golang --skill golang-design-patterns
+npx skills add https://github.com/samber/cc-skills-golang --skill golang-error-handling -y -a opencode
 ```
 
 ## 更新 Skills
@@ -100,5 +100,3 @@ npx skills update
 # 安装新的 Skill（全局安装，跳过确认）
 npx skills add <owner/repo@skill> -g -y
 ```
-
-> 更多命令请运行 `npx skills --help`。
