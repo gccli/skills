@@ -13,6 +13,9 @@ GLOBAL_RULE=AGENTS.global.md
 
 
 
+
+
+
 # 1. Create ~/.config/opencode directory if it doesn't exist
 if [ ! -d "$OPENDOC_CONFIG_DIR" ]; then
     echo "Creating directory: $OPENDOC_CONFIG_DIR"
@@ -28,7 +31,6 @@ if [ -h ${OPENDOC_CONFIG_DIR}/commands ]; then
     rm -f ${OPENDOC_CONFIG_DIR}/commands
 fi
 ln -s ${PWD}/opencode/commands ${OPENDOC_CONFIG_DIR}/commands
-
 
 echo "Starting OpenCode configuration script..."
 /bin/cp $OPENDOC_GLOBAL_RULE ${OPENDOC_GLOBAL_RULE}.${dt}.bak

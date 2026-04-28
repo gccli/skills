@@ -80,6 +80,12 @@
 
 ---
 
+## 安装 Skills
+
+```
+npx skills add https://github.com/samber/cc-skills-golang --skill golang-design-patterns
+```
+
 ## 更新 Skills
 
 使用 Skills CLI (`npx skills`) 可以检查并更新已安装的 Skills：

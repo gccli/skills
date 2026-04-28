@@ -16,9 +16,22 @@
       "sourceType": "github",
       "computedHash": "b6c51a80c7f905c4c873861d0a069e75b7193e66a0057b17db04976985c2229d"
     },
+    "golang-concurrency": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "skillPath": "skills/golang-concurrency/SKILL.md",
+      "computedHash": "956e09e5533a5b2b33255ca1542fed48394b4b49d7a8c6bad28bd1ec4b930d25"
+    },
+    "golang-data-structures": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "skillPath": "skills/golang-data-structures/SKILL.md",
+      "computedHash": "edbdbe2e6c52ea58494e082e8a1375195648ac144cc6888b99fc3859c65bd896"
+    },
     "golang-design-patterns": {
       "source": "samber/cc-skills-golang",
       "sourceType": "github",
+      "skillPath": "skills/golang-design-patterns/SKILL.md",
       "computedHash": "40e05dfa2916cd801f894151d587a93a6969117bf44d8a767e48b2952380adf7"
     },
     "golang-naming": {
@@ -36,10 +49,28 @@
       "sourceType": "github",
       "computedHash": "c90a0798a12ea2d9191508439ec3191dd96713310615260ebe82ec5a09a4a434"
     },
+    "golang-safety": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "skillPath": "skills/golang-safety/SKILL.md",
+      "computedHash": "28bd2a7670f9e23248cac6899e1ef8ce7b549d1b5d590b29cbe3c4e6246d65b4"
+    },
+    "golang-structs-interfaces": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "skillPath": "skills/golang-structs-interfaces/SKILL.md",
+      "computedHash": "950077f895ef4c9df04460f26ec892696079fd31f9cb42cf2787c52f3722c3e9"
+    },
     "golang-testing": {
       "source": "samber/cc-skills-golang",
       "sourceType": "github",
       "computedHash": "6a4472ae06d42ad876c1776c5d89dc93a0f2856fd0c0b14c03dd17c78cbbb89f"
+    },
+    "golang-troubleshooting": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "skillPath": "skills/golang-troubleshooting/SKILL.md",
+      "computedHash": "4c6bc62f4b2a6711f8590de4011461151385af7e3762eb88d977b58c91fcf804"
     },
     "rust-best-practices": {
       "source": "apollographql/skills",
