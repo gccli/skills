@@ -68,6 +68,7 @@ ln -s $PWD/.agent/skills ~/.cline/skills
 
 ## 更新日志
 
+- **2025-04-29**：新增 10 个 Go 专项技能（concurrency、data-structures、error-handling、grpc、safety、samber-lo、stretchr-testify、structs-interfaces、troubleshooting、find-skills）；playwright-mcp 移至 OpenClaw 专属技能
 - **2025-04-27**：新增 golang-naming、golang-popular-libraries、playwright-mcp、rust-best-practices、gitcommit 技能；文档移至 docs/；新增 openclaw/、config.sh、skills-lock.json
 - **2025-02-07**：简化 README，突出仓库核心目的
 - **2025-02-05**：初始版本，包含基础技能和 OpenCode 文档
