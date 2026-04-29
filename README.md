@@ -54,10 +54,10 @@
 
 对于其他类型Agent，共享skills方式
 
-| Agent   | Command                                    |
-|---------|--------------------------------------------|
-| copilot | `ln -s $PWD/.agent/skills ~/.agent/skills` |
-| cline   | `ln -s $PWD/.agent/skills ~/.cline/skills` |
+| Agent   | Command                                      |
+|---------|----------------------------------------------|
+| copilot | `ln -s $PWD/.agents/skills ~/.agents/skills` |
+| cline   | `ln -s $PWD/.agents/skills ~/.cline/skills`  |
 
 ## 相关链接
 
