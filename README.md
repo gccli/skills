@@ -52,12 +52,12 @@
 - 复制 `AGENTS.global.md` 到 `~/.config/opencode/AGENTS.md`
 - 部署全局配置文件 `config.global.json`
 
+对于其他类型Agent，共享skills方式
 
-如果用了其他工具，比如cline，请手动创建到 cline 的符号链接
-
-```
-ln -s $PWD/.agent/skills ~/.cline/skills
-```
+| Agent   | Command                                    |
+|---------|--------------------------------------------|
+| copilot | `ln -s $PWD/.agent/skills ~/.agent/skills` |
+| cline   | `ln -s $PWD/.agent/skills ~/.cline/skills` |
 
 ## 相关链接
 
