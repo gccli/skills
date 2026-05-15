@@ -28,6 +28,12 @@
       "skillPath": "skills/golang-concurrency/SKILL.md",
       "computedHash": "956e09e5533a5b2b33255ca1542fed48394b4b49d7a8c6bad28bd1ec4b930d25"
     },
+    "golang-context": {
+      "source": "samber/cc-skills-golang",
+      "sourceType": "github",
+      "skillPath": "skills/golang-context/SKILL.md",
+      "computedHash": "cb1fc645874a13767366ba4d9f685d3865435e6e490bf2d9124197e25add9d52"
+    },
     "golang-data-structures": {
       "source": "samber/cc-skills-golang",
       "sourceType": "github",
