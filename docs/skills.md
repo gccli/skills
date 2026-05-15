@@ -16,6 +16,7 @@
 | **golang-cli** | Go CLI 应用开发。涵盖命令结构、Flag 处理、配置分层、版本嵌入、退出码、I/O 模式、信号处理、Shell 补全、参数校验等。 | `samber/cc-skills-golang` |
 | **golang-code-style** | Go 代码风格与规范。适用于代码编写、风格审查、Linter 配置、注释编写及项目标准制定。 | `samber/cc-skills-golang` |
 | **golang-concurrency** | Go 并发模式。覆盖 goroutine、channel、select、锁、sync 原语、errgroup、singleflight、worker pool 及 fan-out/fan-in 管道，检测 goroutine 泄漏和竞态条件。 | `samber/cc-skills-golang` |
+| **golang-context** | Go context.Context 最佳实践。涵盖 context 创建、传播、取消、超时、deadline、值存储及跨服务追踪。 | `samber/cc-skills-golang` |
 | **golang-data-structures** | Go 数据结构。切片内部原理与扩容、map 哈希桶、container/list/heap/ring、strings.Builder vs bytes.Buffer、泛型集合、unsafe/weak 指针及拷贝语义。 | `samber/cc-skills-golang` |
 | **golang-design-patterns** | Go 设计模式。函数式选项、构造函数、错误流、资源生命周期、优雅关闭、依赖注入、数据流处理等惯用模式。 | `samber/cc-skills-golang` |
 | **golang-error-handling** | Go 错误处理。创建与 %w 包装、errors.Is/As/Join、自定义错误类型、哨兵错误、panic/recover、单次处理规则、slog 结构化日志及 samber/oops 生产级错误。 | `samber/cc-skills-golang` |
@@ -75,6 +76,7 @@
 │       ├── golang-cli/
 │       ├── golang-code-style/
 │       ├── golang-concurrency/
+│       ├── golang-context/
 │       ├── golang-data-structures/
 │       ├── golang-design-patterns/
 │       ├── golang-development.md        # Go 工程原则补充文件
