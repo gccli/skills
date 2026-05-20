@@ -18,6 +18,8 @@ Use this skill for commit creation, commit-message generation, or safe staging d
 - Never use `git add .`, `git add -A`, or `git commit -a`.
 - Before `git commit`, run `git pull`.
 - If `git pull` produces conflicts, resolve the conflicts first, verify the merged result, then continue to commit.
+- After a successful commit, `git push` is allowed when needed.
+- Never use `git push --force` or `git push -f`.
 
 ## Procedure
 
@@ -103,14 +105,24 @@ Commit:
 git commit -m "type(scope): summary"
 ```
 
+After a successful commit, push is allowed if the workflow requires publishing the branch:
+
+```bash
+git push
+```
+
+Do not use force push variants such as `git push --force` or `git push -f`.
+
 ## Output
 
 ```text
-action: committed | need-confirmation
+action: committed | pushed | need-confirmation
 message: <type>(<scope>): <summary>
 include: <files>
 exclude: <files + reason>
 hash: <commit hash if created>
+recent:
+<git log --oneline -n 3>
 ```
 
 ## Avoid
