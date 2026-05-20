@@ -122,7 +122,7 @@ include: <files>
 exclude: <files + reason>
 hash: <commit hash if created>
 recent:
-<git log --oneline -n 3>
+<git log -n 3>
 ```
 
 ## Avoid
