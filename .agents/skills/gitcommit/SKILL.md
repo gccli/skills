@@ -16,6 +16,8 @@ Use this skill for commit creation, commit-message generation, or safe staging d
 - Respect existing staging.
 - Scope priority: user-provided > inferred from common path/module > omitted.
 - Never use `git add .`, `git add -A`, or `git commit -a`.
+- Before `git commit`, run `git pull`.
+- If `git pull` produces conflicts, resolve the conflicts first, verify the merged result, then continue to commit.
 
 ## Procedure
 
@@ -75,6 +77,19 @@ Type priority:
 Do not ask for scope if it can be inferred or omitted.
 
 ### 4. Execute
+
+Before committing, update the branch:
+
+```bash
+git pull
+```
+
+If `git pull` reports conflicts:
+
+- Resolve the conflicted files.
+- Recheck `git status`, `git diff`, and `git diff --cached`.
+- Stage the resolved files explicitly.
+- Continue only after the worktree is no longer conflicted.
 
 Stage exact files only:
 
